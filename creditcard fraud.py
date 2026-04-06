@@ -1,4 +1,10 @@
-# Import Librarires
+# Credit Card Fraud Detection
+# Author: Aadarsh Karki
+# Description: End-to-end ML pipeline comparing anomaly detection and supervised learning
+#              approaches for detecting fraudulent credit card transactions.
+# Dataset: https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud
+
+# Import Libraries
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -19,7 +25,16 @@ from matplotlib.colors import LinearSegmentedColormap
 from scipy.stats import randint, uniform
 
 # Load Data
-file_path = '/Users/aadarshkarki/Downloads/creditcard.csv'
+# Download dataset from: https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud
+# Place creditcard.csv in the same directory as this script
+import os
+file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'creditcard.csv')
+if not os.path.exists(file_path):
+    raise FileNotFoundError(
+        "Dataset not found. Download creditcard.csv from:\n"
+        "https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud\n"
+        f"and place it at: {file_path}"
+    )
 df = pd.read_csv(file_path)
 
 # Preprocessing
