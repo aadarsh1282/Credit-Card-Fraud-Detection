@@ -26,14 +26,21 @@ from scipy.stats import randint, uniform
 
 # Load Data
 # Download dataset from: https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud
-# Place creditcard.csv in the same directory as this script
 import os
-file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'creditcard.csv')
+
+# Works in both script and Jupyter/Kaggle notebook environments
+if '__file__' in globals():
+    file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'creditcard.csv')
+else:
+    file_path = '/kaggle/input/creditcardfraud/creditcard.csv'
+    if not os.path.exists(file_path):
+        file_path = 'creditcard.csv'
+
 if not os.path.exists(file_path):
     raise FileNotFoundError(
         "Dataset not found. Download creditcard.csv from:\n"
         "https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud\n"
-        f"and place it at: {file_path}"
+        f"Expected at: {file_path}"
     )
 df = pd.read_csv(file_path)
 
