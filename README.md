@@ -3,6 +3,7 @@
 [![Python](https://img.shields.io/badge/Python-3.9+-3776AB?style=flat-square&logo=python&logoColor=white)](https://python.org)
 [![scikit-learn](https://img.shields.io/badge/scikit--learn-1.2+-F7931E?style=flat-square&logo=scikit-learn&logoColor=white)](https://scikit-learn.org)
 [![XGBoost](https://img.shields.io/badge/XGBoost-1.7+-FF6600?style=flat-square)](https://xgboost.readthedocs.io)
+[![Kaggle](https://img.shields.io/badge/Run%20on-Kaggle-20BEFF?style=flat-square&logo=kaggle&logoColor=white)](https://www.kaggle.com/code/aadarshkarki/fraud-detection)
 [![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
 
 End-to-end machine learning pipeline for detecting fraudulent credit card transactions. Compares **unsupervised anomaly detection** (Isolation Forest, Local Outlier Factor) against **supervised classification** (XGBoost baseline and tuned) across five performance metrics.
@@ -95,6 +96,14 @@ Credit-Card-Fraud-Detection/
 ├── .gitignore
 └── README.md
 ```
+
+---
+
+## ▶️ Run Online
+
+Click below to run the full pipeline in your browser — no setup required:
+
+[![Run on Kaggle](https://img.shields.io/badge/Run%20on-Kaggle-20BEFF?style=flat&logo=kaggle&logoColor=white)](https://www.kaggle.com/code/aadarshkarki/fraud-detection)
 
 ---
 
