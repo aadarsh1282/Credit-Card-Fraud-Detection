@@ -31,11 +31,10 @@ import os
 # Works in both script and Jupyter/Kaggle notebook environments
 if '__file__' in globals():
     file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'creditcard.csv')
-elif os.path.exists('/kaggle/input'):
-    dataset_folder = os.listdir('/kaggle/input')[0]
-    file_path = os.path.join('/kaggle/input', dataset_folder, 'creditcard.csv')
 else:
-    file_path = 'creditcard.csv'
+    # Kaggle notebook path
+    kaggle_path = '/kaggle/input/datasets/organizations/mlg-ulb/creditcardfraud/creditcard.csv'
+    file_path = kaggle_path if os.path.exists(kaggle_path) else 'creditcard.csv'
 
 if not os.path.exists(file_path):
     raise FileNotFoundError(
